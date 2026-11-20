@@ -1,38 +1,49 @@
-# MB5370 Marine Genomics: Workshops 1–3
+# Marine Genomics — MB5370
 
-This repository holds your work for workshops 1–3 of the [Marine Genomics module](https://mb5370.bioinformatics.guide/). These workshops are for learning and aren't assessed.
+This repository documents my command-line and bioinformatics work from the Marine Genomics module of MB5370 (Techniques in Marine Science 1) at James Cook University. It includes workshop notes, genome assembly comparisons, and supporting figures. The material is from instructional workshops rather than independent research.
 
-## Layout
+## Workshops
 
-Each workshop has an RMarkdown file for your notes. The folders are where you run commands, and each one belongs to a single workshop.
+### Workshop 1 — Introduction to the command line
 
-```
-mb5370-workshops/
-├── 01_command_line.Rmd          Notes for workshop 1
-├── 02_genome_assembly.Rmd       Notes for workshop 2
-├── 03_metagenome_assembly.Rmd   Notes for workshop 3
-├── command_line/                Workshop 1
-├── redbean/                     Workshop 2
-├── flye_genome/                 Workshop 2
-├── quast/                       Workshop 2
-│   ├── flye_asm/
-│   └── redbean_asm/
-├── repeat/                      Workshop 2
-├── raw_data/                    Workshop 3
-├── flye_metagenome/             Workshop 3
-├── assembly_check/              Workshop 3
-├── metabat/                     Workshop 3
-└── checkm/                      Workshop 3
-    └── bins/
-```
+I practiced navigating directories, inspecting files, and using Unix command-line utilities as a foundation for bioinformatics workflows.
 
-## Working in this repository
+- [Workshop notes (R Markdown)](01_command_line.Rmd)
+- [Rendered HTML notes](01_command_line.html)
 
-- **Every folder the workshops need is already here.** You won't need `mkdir`. If a command complains that a folder doesn't exist, you're probably in the wrong place. Run `pwd` to check where you are.
-- **Run commands in the Terminal, then copy them into your notes.** Put each command in a `bash` chunk in the workshop's `.Rmd`. Knitting shows bash chunks but doesn't run them again, so long jobs and `sbatch` submissions won't be repeated.
-- **R chunks run from the top of the repository.** Give file paths from there, e.g. `flye_metagenome/mock/assembly_info.txt`.
-- **Keep your notes at the top of the repository.** Don't move the `.Rmd` files into subfolders.
+### Workshop 2 — Genome assembly
 
-## Git
+I worked with Oxford Nanopore sequencing data to compare genome assemblies generated using Redbean and Flye at different sequencing coverages. My notes record the commands used, assembly statistics, and interpretations of differences in contiguity, including N50 and contig counts.
 
-Git ignores everything inside the folders except scripts (`.sh` and `.awk` files). It also ignores sequence files and job logs anywhere in the repository. Reads, assemblies and other results are far too big for git.
+- [Workshop notes and comparisons (R Markdown)](02_genome_assembly.Rmd)
+- [Rendered HTML report](02_genome_assembly.html)
+- [Assembly figures](images/)
+
+### Workshop 3 — Metagenome assembly
+
+The third workshop covers a metagenomics workflow, including read inspection, assembly, quality assessment, binning, and bin-quality evaluation. The current document outlines the workflow and serves as a place to record completed analyses and observations.
+
+- [Workshop notes and workflow outline (R Markdown)](03_metagenome_assembly.Rmd)
+
+## Repository structure
+
+- `01_command_line.Rmd`, `02_genome_assembly.Rmd`, `03_metagenome_assembly.Rmd` — workshop notes and commands
+- `01_command_line.html`, `02_genome_assembly.html` — rendered reports
+- `images/` — exported assembly graphs and figures
+- `command_line/` — command-line exercises
+- `redbean/`, `flye_genome/`, `quast/`, `repeat/` — genome assembly and evaluation workspaces
+- `raw_data/`, `flye_metagenome/`, `assembly_check/`, `metabat/`, `checkm/` — metagenomics workspaces
+
+The workspace directories are intentionally retained even when empty in GitHub. Large sequence datasets, intermediate assemblies, and job outputs are excluded from version control.
+
+## Working with the materials
+
+I used Terminal commands and R Markdown to document the workflows. Some commands reference course-specific computing infrastructure and paths, so they are records of the workshop exercises rather than scripts expected to run on any computer. Bash chunks in the R Markdown files are configured as documentation and do not rerun computational jobs when the reports are rendered.
+
+The original notes include paths using the repository's previous name, `mb5370-workshops`. Those paths may need to be adjusted if running commands from a locally renamed folder.
+
+## About this work
+
+These workshops are part of my postgraduate marine biology coursework at James Cook University. They have helped me build experience with Unix command-line tools, genome assembly, computational analysis, and scientific documentation.
+
+[Marine Genomics course workshop guide](https://mb5370.bioinformatics.guide/)

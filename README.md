@@ -21,14 +21,15 @@ I worked with Oxford Nanopore sequencing data to compare genome assemblies gener
 
 ### Workshop 3 — Metagenome assembly
 
-The third workshop covers a metagenomics workflow, including read inspection, assembly, quality assessment, binning, and bin-quality evaluation. The current document outlines the workflow and serves as a place to record completed analyses and observations.
+The third workshop documents a completed metagenomics workflow, including read inspection, Flye assembly, MetaBAT2 binning, and CheckM assessment of genome completeness and contamination. Flye produced 42 contigs totaling 18.37 Mb (assembly N50 1.84 Mb). Seven bins were generated, and the largest unbinned contig was also assessed separately. The report discusses the limitations of binning and assembly-quality metrics.
 
-- [Workshop notes and workflow outline (R Markdown)](03_metagenome_assembly.Rmd)
+- [Workshop analysis (R Markdown)](03_metagenome_assembly.Rmd)
+- [Completed HTML report](03_metagenome_assembly.html)
 
 ## Repository structure
 
 - `01_command_line.Rmd`, `02_genome_assembly.Rmd`, `03_metagenome_assembly.Rmd` — workshop notes and commands
-- `01_command_line.html`, `02_genome_assembly.html` — rendered reports
+- `01_command_line.html`, `02_genome_assembly.html`, `03_metagenome_assembly.html` — rendered reports
 - `images/` — exported assembly graphs and figures
 - `command_line/` — command-line exercises
 - `redbean/`, `flye_genome/`, `quast/`, `repeat/` — genome assembly and evaluation workspaces

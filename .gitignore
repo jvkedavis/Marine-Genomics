@@ -27,3 +27,6 @@ slurm-*.out
 *.gfa
 *.bam
 *.sam
+!/images/
+!/images/*.png
+
